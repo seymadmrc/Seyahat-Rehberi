@@ -1,0 +1,27 @@
+﻿@using Seyahat_Rehberi.Models.Sınıflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h2>Blog Hakkında</h2>
+            @foreach (var x in Model)
+            {
+                <img src="@x.FotoUrl" alt="" />
+
+                <p>@x.Aciklama</p>
+            }
+            <section>
+                <h4>
+                    Blogumuz, seyahat tutkunları için rehber niteliğinde içerikler sunan bir platformdur. Seyahat deneyimlerimizi ve keşfettiklerimizi sizlerle paylaşmayı amaçlamaktayız.
+                </h4>
+                <br /> <br />
+            </section>
+        </div>
+    </div>
+</div>
+

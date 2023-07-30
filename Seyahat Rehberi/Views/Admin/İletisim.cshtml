@@ -1,0 +1,43 @@
+﻿@using Seyahat_Rehberi.Models.Sınıflar
+@model List<İletisim>
+@{
+    ViewBag.Title = "İletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletisim</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AdSoyad</th>
+            <th>Mail</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    @if (Model != null)
+    {
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+
+                    <td>@x.ID</td>
+                    <td>@x.AdSoyad</td>
+                    <td>@x.Mail</td>
+                    <td>@x.Konu</td>
+                    <td>@x.Mesaj</td>
+                    <td><a href="/Admin/İletisimSil/@x.ID" class="btn btn-danger" onclick="return confirm('Bu iletişi silmek istediğinizden emin misiniz?')">Sil</a> </td>
+
+
+                </tr>
+            }
+        </tbody>
+    }
+
+
+</table>
